@@ -5,6 +5,8 @@
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 
 tasks:
-  - init: yarn install
-
+  - name: Dependencies
+    init: yarn install
+  - name: Tests
+    init: npm run test
 
