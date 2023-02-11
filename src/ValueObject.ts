@@ -1,4 +1,4 @@
-import _ from "lodash"; 
+import _ from "lodash";
 
 interface ValueObjectProps {
   [key: string]: any;
@@ -15,10 +15,6 @@ export abstract class ValueObject<T extends ValueObjectProps> {
     if (vo === null || vo === undefined) {
       return false;
     }
-    if (vo.props === undefined) {
-      return false;
-    }
-
     return _.isEqual(this.props, vo.props);
   }
 }
