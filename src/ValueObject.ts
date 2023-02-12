@@ -11,8 +11,15 @@ export abstract class ValueObject<T extends ValueObjectProps> {
     this.props = Object.freeze(props);
   }
 
+  public getInstance(): this {
+    return this;
+  }
+
   public equals(vo: ValueObject<T> | null | undefined): boolean {
     if (vo === null || vo === undefined) {
+      return false;
+    }
+    if (!_.isEqual(this.constructor, vo.constructor)) {
       return false;
     }
     return _.isEqual(this.props, vo.props);
